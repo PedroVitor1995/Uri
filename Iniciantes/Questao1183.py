@@ -1,23 +1,22 @@
 # -*- coding: utf-8 -*-
 def main():
+	soma = 0.0
 	M = []
-	soma = 0
-	media = 0
-	caractere  = input()
+	O = input()
 	for i in range(12):
 		linha = []
 		for j in range(12):
-			linha.append(float(input()))
+			numero = float(input())
+			linha.append(numero)
 		M.append(linha)
 	for i in range(12):
-		i += 1
 		for j in range(12):
-			soma += (M[i][j])
-
-	media = soma / float(12)
-	if caractere == 'S':
-		print('%.1f')%soma
-	elif caractere == 'M':
-		print('%.1f')%media
+			if(j > i):
+				soma += M[i][j]
+	if(O == "S"):
+		print("%.1f"%soma)
+	elif(O == "M"):
+		media = soma / 66.0
+		print("%.1f"%media)
 if __name__ == '__main__':
 	main()
